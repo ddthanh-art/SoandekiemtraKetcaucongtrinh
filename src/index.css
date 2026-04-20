@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap');
+
+@import "tailwindcss";
+
+/* Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #F0F8FF;
+}
+
+/* Canvas anti-aliasing */
+canvas {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  display: block;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* KaTeX overrides */
+.katex-display {
+  margin: 0.5em 0 !important;
+  font-size: 1em !important;
+}
+
+/* Solution panel math blocks */
+.math-block {
+  background: #EFF6FF;
+  border-left: 3px solid #3B82F6;
+  padding: 8px 12px;
+  border-radius: 0 6px 6px 0;
+  margin: 4px 0;
+  font-family: 'Roboto', monospace;
+  font-size: 0.875em;
+  overflow-x: auto;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Print styles for PDF */
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; }
+}
+
+/* Selection highlight */
+::selection {
+  background: #BFDBFE;
+  color: #1E3A8A;
+}
+
+/* Focus visible for accessibility */
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #3B82F6;
+  outline-offset: 2px;
+}
+
+/* Smooth transitions */
+button {
+  transition: all 0.15s ease;
+}
+
+/* Canvas cursor states */
+.canvas-crosshair {
+  cursor: crosshair !important;
+}
+.canvas-pointer {
+  cursor: pointer !important;
+}
